@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="lottery" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=192.168.1.150;Initial Catalog=lottery;Persist Security Info=True;User ID=web2" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="lotteryConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.betForm" Member="betForms">
+    <Type Name="betForm">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="periodId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="externalId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="companyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="parentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="betType" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="betBranch" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="chooseBall" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="combo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="betAmount" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="rate" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="totalBet" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="winAmount" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="createDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="createIP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="checkoutDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="deliverAmount" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="isDeliver" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="lotteryResult" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="r8" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="r7" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="r1" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="betRemark" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="l9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="l8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="l7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="l1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="beginDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="deliveryDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="lastModifyDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.bulletin" Member="bulletins">
+    <Type Name="bulletin">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="contentText" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="createDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updateDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="updateUserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="stickyDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="companyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.company" Member="companies">
+    <Type Name="company">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="principalId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="createDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="updateDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="updateUserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="betRate" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="defaultBetSetting" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.member" Member="members">
+    <Type Name="member">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="levelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="companyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="externalId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="l9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="l8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="l7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="l1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="loginDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="loginIP" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="parentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="updateDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="updateUserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="walletAmount" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="rate" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="betSetting" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="loginGuid" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="nickname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
